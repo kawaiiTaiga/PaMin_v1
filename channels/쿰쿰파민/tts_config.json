@@ -1,0 +1,16 @@
+{
+  "zonos_model_name": "Zyphra/Zonos-v0.1-transformer",
+  "zonos_language": "ko",
+  "zonos_ref_wav_path": "C://Users//gaterbelt//Documents//카카오톡 받은 파일//test//ganyu//656_audio.wav",
+  "zonos_emotion": [0.80, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.85],
+  "zonos_speaking_rate": 40,
+  "zonos_pitch_std": 10,
+  "zonos_disable_torch_compile": true,
+  "whisper_model_size": "large",
+  "whisper_language": "ko",
+  "fuzzy_match_threshold": 75,
+  "sequential_match_threshold": 90,
+  "slip_lookahead": 2,
+  "audio_output_subdir": "generated_audio",
+  "audio_speed_factor": 1.0
+}

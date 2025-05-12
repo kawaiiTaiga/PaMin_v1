@@ -1,0 +1,43 @@
+{
+  "name": "workflow_basic",
+  "display_name": "기본 숏츠 생성 워크플로우",
+  "description": "토픽 선정부터 영상 제작 및 업로드 준비까지의 표준 워크플로우입니다.",
+  "steps": [
+    {
+      "number": 1,
+      "name": "토픽 생성 및 선정",
+      "render_file": "step_1_topic.py",
+      "render_function": "render_step"
+    },
+    {
+      "number": 2,
+      "name": "스크립트 생성 및 처리",
+      "render_file": "step_2_script.py",
+      "render_function": "render_step"
+    },
+    {
+      "number": 3,
+      "name": "이미지 검색용 query 생성",
+      "render_file": "step_3_image_plan.py",
+      "render_function": "render_step"
+    },
+    {
+      "number": 4,
+      "name": "이미지 검색 및 선정",
+      "render_file": "step_4_image_search.py",
+      "render_function": "render_step"
+    },
+    {
+      "number": 5,
+      "name": "음성 생성 및 타임스탬프 매핑",
+      "render_file": "step_5_audio.py",
+      "render_function": "render_step"
+    },
+    {
+      "number": 6, 
+      "name": "최종 영상 생성", 
+      "render_file": "step_6_video_generation.py", 
+      "render_function": "render_step" 
+    }
+  ]
+}

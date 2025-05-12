@@ -1,0 +1,113 @@
+{
+  "workflow": "workflow_basic",
+  "definitionVersion": "1.1",
+  "lastUpdated": "2025-05-07T16:26:15.013826",
+  "channelInfo": {
+    "channelName": "쿰쿰파민",
+    "niche": "흥미로운 음식에 관한 과학 및 역사적 사실 전달",
+    "coreMessage": "음식 속 숨겨진 과학/역사 이야기를 쉽고 재미있게 파헤쳐 지적 호기심 충족",
+    "usp": "음식에 관한 여러 tmi를 속도감 있게 전달"
+  },
+  "targetAudience": {
+    "primaryAgeRange": [
+      "25-34"
+    ],
+    "secondaryAgeRange": [
+      "19-24",
+      "35-44"
+    ],
+    "interests": [
+      "음식",
+      "과학",
+      "역사",
+      "상식",
+      "숏폼"
+    ],
+    "needsOrPainPoints": [
+      "짧은 시간에 재미있게 지식 얻기",
+      "대화 소재"
+    ],
+    "preferredContentStyle": [
+      "빠른 템포",
+      "핵심 요약",
+      "시각 자료 풍부",
+      "약간의 유머",
+      "신뢰성"
+    ]
+  },
+  "channelIdentity": {
+    "personalityAdjectives": [
+      "지적인",
+      "센스있는",
+      "명료한",
+      "신뢰감 있는",
+      "호기심 많은",
+      "트렌디한"
+    ],
+    "toneOfVoice": "유머를 잃지 않으면서도 핵심 정보는 명확하고 신뢰성 있게 전달. 친근하지만 존댓말로",
+    "forbiddenTopicsOrTones": [
+      "검증 안된 정보",
+      "민감 주제",
+      "비하/혐오",
+      "준말(ㄹㅇ,ㅇㅇ)"
+    ]
+  },
+  "contentStrategy": {
+    "contentPillars": [
+      "생활 속 과학/역사",
+      "음식"
+    ],
+    "primaryGoal": "정보 전달 및 지적 만족감",
+    "secondaryGoals": [
+      "구독 유도",
+      "신뢰도 구축",
+      "댓글 참여"
+    ]
+  },
+  "shortsFormat": {
+    "standardDurationSeconds": 30,
+    "pacing": "매우 빠름 (Very Fast)",
+    "standardSegments": [
+      {
+        "segmentName": "Hook & Intro",
+        "purpose": "시선 집중 및 영상 컨셉 제시",
+        "styleNotes": "'[음식 이름]은 원래 ~였다고?(1문장)'",
+        "estimatedDurationSeconds": 4
+      },
+      {
+        "segmentName": "Trivia_1",
+        "purpose": "첫 번째 흥미로운 사실 공개 + 추가적인 디테일",
+        "styleNotes": "빠른 템포로 사실 공개(1문장) / 자세하고 흥미로운 디테일(최소 2문장, 무언가 정말 전문적이고 있는듯한 사실) 공감을 유도하는 표현 사용 금지",
+        "estimatedDurationSeconds": 16
+      },
+      {
+        "segmentName": "Connect",
+        "purpose": "첫 번째 사실과 두번째 사실을 연결",
+        "styleNotes": "두 사실을 자연스럽게 연결 시킬 수 있는 텍스트",
+        "estimatedDurationSeconds": 5
+      },
+      {
+        "segmentName": "Trivia_2",
+        "purpose": "두 번째 흥미로운 사실 공개 + 추가적인 디테일",
+        "styleNotes": "빠른 템포로 사실 공개(1문장) / 자세하고 흥미로운 디테일(최소 2문장, 무언가 정말 전문적이고 있는듯한 사실) 공감을 유도하는 표현 사용 금지",
+        "estimatedDurationSeconds": 16
+      },
+      {
+        "segmentName": "Wrap-up & CTA",
+        "purpose": "마무리",
+        "styleNotes": "앞의 내용과 연결시키면서 오늘은 ([음식이름]으로 만든 실제로 존재하는 괴식)을 먹는거 어떤가요? (1문장)(괴식임을 말해서는 안됨, 괴식을 아주 자연스러운 음식인것처럼 말해야함).",
+        "estimatedDurationSeconds": 5
+      }
+    ],
+    "recurringElements": {
+      "openingSignature": "세련된 효과음 + 로고 모션",
+      "closingSignature": "차분한 효과음 + 구독 버튼 + 로고",
+      "catchphrase": "여러분이 좋아하는 [음식이름]",
+      "commonVisualEffect": [
+        "Clean Transition",
+        "Info Graphic",
+        "Text Highlight"
+      ]
+    }
+  }
+}

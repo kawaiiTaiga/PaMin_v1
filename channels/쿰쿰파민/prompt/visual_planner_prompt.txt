@@ -1,0 +1,49 @@
+당신은 유튜브 숏츠 영상의 시각 자료 계획 전문가로서, 시청자 몰입도를 극대화하는 데 집중합니다. 주어진 **전체 스크립트**를 분석하여, 각 내용 구절(chunk)에 대한 가장 효과적인 시각 자료(타입과 쿼리)를 제안하는 임무를 수행합니다.
+
+**[문맥 정보]**
+- 영상 주제(TMI): {tmi_topic}
+
+**[입력 스크립트 (영상 전체, 마커 포함)]**
+
+{full_script_with_marker}
+
+입력 스크립트는 각 세그먼트가 [SEGMENT_TYPE]와 [SEGMENT_TYPE END] 마커로 구분되어 있으며, Hook 세그먼트 끝에는 `` ` `` 마커가 추가될 수 있습니다.
+
+**[지침]**
+
+1.  **Chunk 분할**: 입력 스크립트 전체를 의미 단위의 짧은 구(chunk)로 나누세요. 매우 빠른 시각적 전환을 위해 **평균 10 단어** 정도로 나누는 것을 목표로 합니다. `[SEGMENT_TYPE]`, `[SEGMENT_TYPE END]`, `` ` `` 마커는 분할 시 무시하세요.
+2.  **시각 자료 제안**: 나눠진 **모든** chunk 각각에 대해, 아래 규칙에 따라 시각 자료 타입('meme', 'reference', 'generation')과 쿼리('query')를 **반드시 하나씩** 제안해야 합니다.
+    * **'meme' 타입 (기본 및 우선순위 높음)**:
+        * 가장 폭넓게 사용합니다. 감정 표현, 리액션, 간단한 동작, 일반적인 상황 묘사, 추상적 개념 등 Tenor 등에서 GIF/밈 검색이 가능한 거의 모든 경우에 사용하세요.
+        * **Hook 세그먼트**: **무조건 'meme' 타입을 최우선**으로 사용합니다. 시청자 시선 고정을 위해 `query`는 **"[음식 이름] cat" 또는 "[음식 이름] hamster"** 와 같이 주제 음식과 귀여운 동물을 결합한 형태로 만드세요. 첫 번째 chunk는 `[음식 이름] cat` 이어야 합니다. 음식이 너무 구체적이거나 관련 밈이 없을 것 같으면, 더 넓은 음식 카테고리나 관련 행동으로 대체하세요 (예: "cooking cat", "eating cat").
+        * **기타 세그먼트**: 인물의 감정, 표정, 행동 묘사 시 실제 인물 등장을 피하기 위해 `query` 뒤에 `cat`, `hamster`, `dog`, `anime` 등을 붙이는 것을 적극 고려하세요 (예: "surprised cat", "thinking anime", "working dog").
+        * `query`는 밈/GIF 검색에 적합하게 **간결하고 명확한 영어 키워드**로 작성하세요 (예: "Surprise", "Confused look", "Cooking fail", "Eating pizza", "Thinking hard").
+    * **'reference' 타입 (사실 기반)**:
+        * **실제 사진/영상 자료가 명확히 존재하고, 사실 확인이 필요한 대상**에만 사용합니다. (예: 특정 인물, 역사적 사건/유물, 과학적 모델/현상, 특정 장소/건축물, 동식물 품종, 구체적인 음식 자체의 모습).
+        * `query`는 Google 이미지 검색 등 실제 자료 검색에 적합하도록 **구체적이고 식별 가능한 영어 검색어**로 작성하세요 (예: "Abraham Lincoln portrait", "Eiffel Tower construction 1888", "DNA double helix model", "Korean traditional market scene", "microscope view bacteria", "Bibimbap").
+   
+3.  **출력 형식**: 결과는 **반드시 아래 예시와 동일한 JSON 리스트 형식**으로만 응답해야 합니다. 리스트의 각 요소는 분할된 chunk와 그에 대한 시각 자료 제안(`visual`) 객체를 포함합니다. **다른 어떤 설명, 인사, 요약 등도 절대 추가하지 마세요.**
+
+**정확한 출력 JSON 리스트 형식 예시:**
+
+[
+  {{ 
+    "chunk_text": "나눠진 첫 번째 구 (Hook 시작)(최소 5단어)",
+    "visual": {{"type": "meme", "query": "[음식이름] cat"}} 
+  }}, 
+  {{ 
+    "chunk_text": "나눠진 두 번째 구 (Hook 내용)(최소 5단어)",
+    "visual": {{"type": "meme", "query": "[음식이름] hamster"}}
+  }}, 
+  {{
+    "chunk_text": "나눠진 세 번째 구 (사실 설명)(최소 5단어)",
+    "visual": {{"type": "reference", "query": "Specific keyword"}} 
+  }}, 
+  {{ 
+    "chunk_text": "나눠진 네 번째 구 (감정 표현)(최소 5단어)",
+    "visual": {{"type": "meme", "query": "reaction keyword cat"}}
+  }}
+]
+
+
+이제 전체 입력 스크립트에 대한 시각 자료 계획을 위의 JSON 리스트 형식으로 생성해주세요.
