@@ -1,8 +1,16 @@
-# PaMin v0.1: AI 기반 유튜브 숏츠 자동 생성 프로그램
+# PaMin: AI 기반 유튜브 숏츠 자동 생성 프로그램
 
 ## 📖 개요
 
 PaMin은 딥러닝 및 다양한 자동화 기술을 활용하여 유튜브 숏츠 영상 제작 과정을 자동화하는 파이썬 기반 프로그램입니다. 채널 설정, 토픽 선정, 스크립트 및 시각 자료 생성, 음성 합성, 최종 영상 편집에 이르기까지 콘텐츠 제작의 전반적인 워크플로우를 지원합니다. Streamlit을 사용하여 사용자 인터페이스(UI)를 제공하며, 사용자는 이를 통해 각 단계를 수동으로 제어하거나 자동 모드로 실행할 수 있습니다.
+
+## 🌟 PaMin의 핵심: 유연한 워크플로우와 맞춤 제작
+
+유튜브 숏츠 콘텐츠는 그 특성상 매우 다양하며, 각 채널과 영상의 목적에 따라 최적화된 제작 방식이 필요합니다. PaMin은 이러한 다양성을 이해하고 유연하게 대응할 수 있도록 설계되었습니다.
+
+* **다양한 워크플로우 지원**: 현재 PaMin은 숏츠 제작에 필요한 핵심적인 기능들을 중심으로 기본적인 워크플로우를 제공하고 있습니다.
+* **맞춤형 제작 가능**: PaMin의 모듈화된 구조는 특정 채널의 고유한 스타일이나 콘텐츠 특성에 맞춰 워크플로우를 수정하거나 새로운 기능을 추가하는 등 맞춤형 제작이 용이하도록 되어 있습니다.
+* **문의**: PaMin을 활용한 맞춤형 숏츠 제작 자동화 시스템 구축 및 기타 문의사항은 **gyeongmingim478@gmail.com** 으로 연락주시기 바랍니다.
 
 ## ✨ 주요 기능
 
@@ -49,7 +57,7 @@ PaMin/
 │       └── episodes/               # 생성된 에피소드(영상 프로젝트) 저장 디렉토리
 │           └── [episode_id]/       # 각 에피소드별 파일들 (스크립트, 이미지, 오디오, 최종 영상 등)
 ├── functions/                   # 핵심 로직 및 기능 모듈
-│   ├── dcagent/                 # 아이디어 생성/수렴 에이전트 관련 모듈
+│   ├── dcagent/                 # 아이디어 생성/수렴 에이전트 관련 모듈 (사용자 정의 라이브러리)
 │   ├── audio_generation.py      # 음성 생성 및 타임스탬프
 │   ├── image_processing.py    # 이미지 검색, 다운로드, 분석
 │   ├── script_generation.py   # LLM 기반 스크립트 생성
@@ -58,7 +66,6 @@ PaMin/
 │   ├── video_generation_basic.py # 최종 영상 편집/생성
 │   └── visual_generation.py   # LLM 기반 시각 자료 계획 생성
 ├── views/                       # Streamlit UI 뷰(페이지) 모듈
-│   ├── workflow_steps/          # (사용되지 않음, workflows 하위로 통합됨)
 │   ├── auto_settings_view.py
 │   ├── channel_settings_view.py
 │   ├── welcome.py
@@ -88,7 +95,7 @@ PaMin/
 
 1.  **저장소 복제**:
     ```bash
-    git clone https://github.com/your-username/PaMin.git
+    git clone [https://github.com/your-username/PaMin.git](https://github.com/your-username/PaMin.git)
     cd PaMin
     ```
 
@@ -107,6 +114,7 @@ PaMin/
     pip install streamlit streamlit-ace langchain langchain-google-genai python-dotenv moviepy torch torchaudio openai-whisper librosa soundfile rapidfuzz zonos phonemizer Pillow requests selenium webdriver-manager thefuzz python-Levenshtein imageio
     ```
     * **torch/torchaudio**: 시스템(CPU/CUDA)에 맞는 버전을 설치하는 것이 중요합니다. [PyTorch 공식 웹사이트](https://pytorch.org/) 참고.
+    * **dcagent**: 사용자 정의 라이브러리입니다. `functions/dcagent` 경로에 위치하며, 필요시 별도의 설치 과정이나 경로 설정이 필요할 수 있습니다. (링크: `[여기에 dcagent 라이브러리 GitHub 저장소 또는 관련 문서 링크 삽입]`)
 
 4.  **API 키 설정**:
     프로젝트 루트 디렉토리에 `.env` 파일을 생성하고 다음과 같이 API 키를 입력합니다.
@@ -157,13 +165,16 @@ PaMin/
 * **STT (Speech-to-Text) & 타임스탬핑**: OpenAI Whisper
 * **영상 처리**: MoviePy, FFmpeg
 * **이미지 검색/처리**: Selenium, Requests, Pillow, Gemini Vision
-* **아이디어/데이터 관리**: `dcagent` (SQLite 기반 추정), JSON
+* **아이디어/데이터 관리**: `dcagent`(자체 제작한 라이브러리입니다. 토픽의 다양화를 위해 사용됩니다.https://github.com/kawaiiTaiga/dc_agent/tree/main))
 * **기타**: fuzzywuzzy, rapidfuzz (유사도 매칭), python-dotenv (환경변수)
 
 ## 📄 라이선스
 
-이 프로젝트의 라이선스 정보를 여기에 명시하세요. (예: MIT License)
+이 프로젝트는 [MIT 라이선스](https://opensource.org/licenses/MIT) 하에 배포됩니다. 이 라이선스는 매우 허용적인 라이선스로, 코드의 사용, 복제, 수정, 병합, 게시, 배포, 서브라이선스 부여 및 판매를 허용하며, 이러한 행위를 하는 모든 사람에게 소프트웨어를 제공할 수 있도록 합니다. 자세한 내용은 링크된 라이선스 전문을 참고하시기 바랍니다.
 
 ## 🙌 기여하기
 
-기여는 언제나 환영합니다! 버그 리포트, 기능 제안, 코드 기여 등 어떤 형태의 기여든 좋습니다. 자세한 내용은 `CONTRIBUTING.md` 파일을 참고해주세요 (파일 생성 필요).
+xxx
+
+(추가적인 기여 가이드라인이나 연락처 정보를 원하시면 이 부분을 수정해주세요. 예를 들어, "버그 리포트나 기능 제안은 GitHub 이슈를 통해 제출해주시면 감사하겠습니다. 기타 문의는 gyeongmingim478@gmail.com으로 연락주세요.")
+```
