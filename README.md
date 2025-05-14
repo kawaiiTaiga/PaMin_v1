@@ -2,6 +2,7 @@
 
 ## 중요!
 * **사용** : STREAMLIT을 활용한 GUI - 백엔드는 현재 부끄럽게도 많은 하드코딩으로 작동되고 있습니다... 실사용에 엄청나게 많은 애로사항이 예상됩니다.... 메일로 문의 주시거나 업데이트를 기다려주세요
+* 실제 사용 영상 및 제작 샘플들은 https://youtube.com/channel/UCtrXu5BFUTY2uoqkwL00wMw?si=JMDyQhwgM2KmMBPj <- 여기를 통해서 확인 가능합니다
 
 ## 📖 개요
 
